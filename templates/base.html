@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static '/css/base.css' %}">
   
   <title>{% block 'title' %}{% endblock %}</title>
 
@@ -18,7 +19,7 @@
     <img class="Logo-navbar" src="{% static '/img/Logo.jpeg' %}"  alt="Logo Alvaro Imoveis" width="320px">
   </a> 
  </div>
-  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#1F4073 ;" >
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#1F4073 ;">
     <div class="container-md" id="container-items-navbar">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,6 +48,48 @@
       <!-- JavaScript -->
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" ></script>
+
+      <footer class="container-fluid mt-5" style="background-color:#1F4073 ;" >
+        <div class="row pt-5 pb-5">
+          
+          <section class="col-md-5">
+            <h5 >Contato</h5>
+                  <ul class="nav flex-column">
+                    <li class=nav-item>
+                     <a href="tel:+5527111111111" class="nav-link"> Tel: (27) 9 9999-9999</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://api.whatsapp.com/send?phone=55&text=" class="nav-link" target="blank">Whatsapp (27) 9 9999-9999</a>
+                    </li>
+                    <li></li>
+                  </ul>
+          </section>
+
+          <section class="col-md-5">
+            <h5>Informações</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Baby</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Baby2</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Baby3</a>
+              </li>
+            </ul>
+          </section>
+          
+          <section >
+            <ul class="nav flex-column"> 
+              <li class="nav-item">
+                <a href="#" class="nav-link" id="VoltarAoTopo">Voltar ao topo </a>
+              </li>
+            </ul> 
+            
+          </section>
+        </div>
+      </footer>
      
 </body>
 </html>

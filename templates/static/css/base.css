@@ -1,0 +1,13 @@
+.col-md-5{
+    color: white;
+}
+
+.col-md-5 ul li a {
+    color: white;
+    text-decoration: underline;
+}
+
+#VoltarAoTopo{
+    color: white;
+    text-decoration: underline;
+}
