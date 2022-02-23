@@ -2,9 +2,23 @@
 {% load static %}
 
 {% block 'head' %}
-
+<link rel="stylesheet" href="{% static 'plataforma/css/home.css' %}">
 {% endblock  %}
-
+{% block 'title' %}Financiamentos{% endblock %}
 {% block 'body' %}
-<h1>Financiamento</h1>
+<h3 class="h3 text-center mt-5 mb-5"> Simuladores de Financiamentos </h3>
+<div class="container-fluid row d-flex justify-content-around" id="icones-financiamento">
+    <div class="card-container">
+        <a href="https://www42.bb.com.br/portalbb/imobiliario/creditoimobiliario/simular,802,2250,2250.bbx?pk_vid=5b0281e1a9b0b92d164562879115356d&pk_vid=5b0281e1a9b0b92d164562879115356d" target="blank"><img src="{% static '/plataforma/img/bancodobrasil.png' %}" alt=""></a>
+    </div>
+    <div class="card-container ">
+        <a href="https://banco.bradesco/html/classic/produtos-servicos/emprestimo-e-financiamento/index.shtm?par=1" target="blank"><img src="{% static '/plataforma/img/bradesco.png' %}" alt=""></a>
+    </div>
+    <div class="card-container ">
+        <a href="https://credito-imobiliario.itau.com.br/?utm_source=google&utm_medium=search&utm_campaign=rv-midia_paga-credito_imobiliario-conversao-marca_nna_tcpa&utm_content=google-2nd-cpc-all_devices-keyword-marca_financ-paid_search-responsive_ad-rv1423646818&utm_sou=google&utm_med=paidsearch&utm_cid=&utm_cont=imob_responsive&ef_id=EAIaIQobChMIm67hjY-W9gIVCw-RCh34zQAeEAAYASAAEgKzNvD_BwE:G:s&s_kwcid=AL!905!3!546074486093!e!!g!!itau%20financiamento%20imobiliario&gclid=EAIaIQobChMIm67hjY-W9gIVCw-RCh34zQAeEAAYASAAEgKzNvD_BwE" target="blank"><img src="{% static '/plataforma/img/itau.png' %}" alt=""></a>
+    </div>
+    <div class="card-container ">
+        <a href="http://www8.caixa.gov.br/siopiinternet-web/simulaOperacaoInternet.do?method=inicializarCasoUso" target="blank"><img src="{% static '/plataforma/img/caixa.png' %}" alt=""></a>
+    </div>
+</div>
 {% endblock %}

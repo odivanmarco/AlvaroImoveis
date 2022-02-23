@@ -4,7 +4,7 @@
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'plataforma/css/home.css' %}">
 {% endblock  %}
-
+{% block 'title' %}Página Inicial{% endblock %}
 {% block 'body' %}
 
 <div class="container">
@@ -23,9 +23,33 @@
             <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
             <div class="informacoes_imoveis">
               <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
-              <p>{{imovel.rua}}, {{imovel.cidade}}</p>
+              {% if imovel.tipo == 'V' %}
+              <p>Venda</p>
+              {% endif %}
+              {% if imovel.tipo == 'A' %}
+              <p>Aluguel</p>
+              {% endif %}
+              {% if imovel.tipo == 'L' %}
+              <p>Lote</p>
+              {% endif %}
+              {{imovel.rua}}, {{imovel.cidade}}
               <br>
-              <img width="7%" src="{% static 'plataforma/img/heart.png' %}">
+              <ul class="lista-detalhes">
+                <li>
+                  <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
+                </li>
+                <li>
+                  <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{imovel.banheiros}}
+                </li>
+                <li>
+                  <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{imovel.garagens}}
+                </li>
+                <li>
+                  <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{imovel.tamanho}} m²
+                </li>
+              </ul>
+              <!-- <p><img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}} <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="25px">{{imovel.banheiros}} <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="25px"> {{imovel.garagens}} <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="25px"> {{imovel.tamanho}} </p> -->
+              <!-- <img width="7%" src="{% static 'plataforma/img/heart.png' %}"> -->
             </div>
           
           </div>
@@ -52,13 +76,13 @@
           <form action="{% url 'home' %}" method="GET">
             <label>Preço mínimo</label>
             <br>
-            <input name="preco_minimo" class="form-control" type="number" placeholder="R$ 00">
+            <input name="preco_minimo" class="form-control" type="number" placeholder="R$ 100">
   
             <br>
   
             <label>Preço máximo</label>
             <br>
-            <input name="preco_maximo" class="form-control" type="number" placeholder="R$ 200000000">
+            <input name="preco_maximo" class="form-control" type="number" placeholder="R$ 10000000">
   
             <br>
   
@@ -67,7 +91,6 @@
             <select name="cidade" class="form-control">
               {% for cidade in cidades %}
                 <option value="{{cidade.id}}">{{cidade.nome}}</option>
-              
               {% endfor %}    
             </select>
   
@@ -75,13 +98,19 @@
   
             <label>Tipo</label>
             <br>
-  
+            
             <input name="tipo" type="checkbox" value="A"><label>&nbspApartamento</label>
-            <br>
             <input name="tipo" type="checkbox" value="C"><label>&nbspCasa</label>
+            <input name="tipo" type="checkbox" value="L"><label>&nbspLote</label>
+            <br>
+            <input name="tipoAV" type="checkbox" value="A"><label>&nbspAluguel</label>
+            <br>
+            <input name="tipoAV" type="checkbox" value="V"><label>&nbspVenda</label>
             <br>
             <br>
             <input class="btn_filtrar_modal" type="submit" value="FILTRAR">
+            <br>
+
           </form>
         </div>
         

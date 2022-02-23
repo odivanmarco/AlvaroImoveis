@@ -17,6 +17,7 @@ def home(request):
     preco_maximo = request.GET.get('preco_maximo')
     cidade = request.GET.get('cidade')
     tipo = request.GET.getlist('tipo')
+    tipoAV = request.GET.getlist('tipoAV')
     cidades = Cidade.objects.all()
     if preco_minimo or preco_maximo or cidade or tipo:
         
@@ -26,15 +27,20 @@ def home(request):
             preco_maximo = 999999999
         if not tipo:
             tipo = ['A', 'C']
+        if not tipoAV:
+            tipoAV = ['A', 'V']
         
         
         imoveis = Imovei.objects.filter(valor__gte=preco_minimo)\
         .filter(valor__lte=preco_maximo)\
-        .filter(tipo_imovel__in=tipo).filter(cidade=cidade)
+        .filter(tipo_imovel__in=tipo).filter(cidade=cidade)\
+        .filter(tipo__in=tipoAV).filter(cidade=cidade)
     else:
         imoveis = Imovei.objects.all()
-    
     return render(request, 'home.html', {'imoveis': imoveis, 'cidades': cidades})
+
+def buscaPorCodigo(request):
+    pass
 
 
 def imovel(request, id):

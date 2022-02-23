@@ -32,6 +32,8 @@ class Imovei(models.Model):
     tipo_imovel = models.CharField(max_length=1, choices=choices_imovel)
     numero = models.IntegerField()
     descricao = models.TextField()
+    garagens = models.IntegerField()
+    banheiros = models.IntegerField()
    
 
     def __str__(self) -> str:
