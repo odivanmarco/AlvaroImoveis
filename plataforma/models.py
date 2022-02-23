@@ -20,8 +20,7 @@ class Imovei(models.Model):
 
     choices_imovel = (('A', 'Apartamento'),
                       ('C', 'Casa'),('L','Lote'))
-                      
-    codigo_imovel = models.IntegerField(unique=True)
+                        
     imagens = models.ManyToManyField(Imagem)
     valor = models.FloatField()
     quartos = models.IntegerField()
