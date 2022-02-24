@@ -7,44 +7,14 @@
 {% block 'title' %}Página Inicial{% endblock %}
 {% block 'body' %}
 
-<div class="container mt-2 ">
-<form action="" method="get">
-  <div class="form-row">
+<div class="container">
+  <br>
+  <button type="button" class="btn_filtrar" data-toggle="modal"
+	 data-target="#exampleModal">
+    FILTRAR
+  </button>
 
-    <div class="col-md-2 mt-1">
-      <select name="tipoAV" class="custom-select mr-sm-2"  >
-        <option value="V">Comprar</option>
-        <option value="A">Alugar</option>
-      </select>
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <select name="tipo" class="custom-select mr-sm-2">
-        <option  id="" value="A">Apartamento</option>
-        <option  id="" value="C">Casa</option>
-        <option  id="" value="L">Lote</option>
-      </select>
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <select name="cidade" class="custom-select mr-sm-2">
-        {% for cidade in cidades %}
-          <option value="{{cidade.id}}">{{cidade.nome}}</option>
-        {% endfor %}
-      </select>
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">  
-    </div>
-    <button class="btn btn-primary" type="submit"> Filtrar </button>
-  </div>
-</form>
-<div class="row">
+  <div class="row">
 
     {% for imovel in imoveis %}
       
@@ -93,5 +63,59 @@
 
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title titulo_filtrar" id="exampleModalLabel">FILTRAR</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'home' %}" method="GET">
+            <label>Preço mínimo</label>
+            <br>
+            <input name="preco_minimo" class="form-control" type="number" placeholder="R$ 100">
+  
+            <br>
+  
+            <label>Preço máximo</label>
+            <br>
+            <input name="preco_maximo" class="form-control" type="number" placeholder="R$ 10000000">
+  
+            <br>
+  
+            <label>Cidade</label>
+            <br>
+            <select name="cidade" class="form-control">
+              {% for cidade in cidades %}
+                <option value="{{cidade.id}}">{{cidade.nome}}</option>
+              {% endfor %}    
+            </select>
+  
+            <br>
+  
+            <label>Tipo</label>
+            <br>
+            
+            <input name="tipo" type="checkbox" value="A"><label>&nbspApartamento</label>
+            <input name="tipo" type="checkbox" value="C"><label>&nbspCasa</label>
+            <input name="tipo" type="checkbox" value="L"><label>&nbspLote</label>
+            <br>
+            <input name="tipoAV" type="checkbox" value="A"><label>&nbspAluguel</label>
+            <br>
+            <input name="tipoAV" type="checkbox" value="V"><label>&nbspVenda</label>
+            <br>
+            <br>
+            <input class="btn_filtrar_modal" type="submit" value="FILTRAR">
+            <br>
+
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

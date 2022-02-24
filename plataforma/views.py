@@ -19,14 +19,14 @@ def home(request):
     tipo = request.GET.getlist('tipo')
     tipoAV = request.GET.getlist('tipoAV')
     cidades = Cidade.objects.all()
-    if preco_minimo or preco_maximo or cidade or tipo:
+    if preco_minimo or preco_maximo or cidade or tipo or tipoAV:
         
         if not preco_minimo:
             preco_minimo = 0
         if not preco_maximo:
             preco_maximo = 999999999
         if not tipo:
-            tipo = ['A', 'C']
+            tipo = ['A', 'C', 'L']
         if not tipoAV:
             tipoAV = ['A', 'V']
         
