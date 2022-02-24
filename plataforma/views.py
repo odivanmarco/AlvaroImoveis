@@ -40,8 +40,9 @@ def home(request):
     return render(request, 'home.html', {'imoveis': imoveis, 'cidades': cidades})
 
 def buscaPorCodigo(request):
-    pass
-
+    id = request.GET.get('id')
+    imovel = Imovei.objects.filter(id=id)
+    return render(request, 'home.html', {'imoveis': imovel})
 
 def imovel(request, id):
     imovel = get_object_or_404(Imovei, id=id)
