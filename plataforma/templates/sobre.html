@@ -3,15 +3,16 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'plataforma/css/home.css' %}">
-
 {% endblock  %}
+
 {% block 'title' %}Sobre{% endblock %}
 
 {% block 'body' %}
 <main>
     <section>
-        <div>
-            <img class="logo-sobre" src="/media/img/logo.jpeg" alt="Logo Álvaro Imóveis"><h1> Sobre nós </h1>
+        <div class="container">
+            <img class="logo-sobre" src="{% static '/img/Logo.jpeg'%}" alt="Logo Álvaro Imóveis">
+            <h1> Sobre nós </h1>
             <p class="paragrafo">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
