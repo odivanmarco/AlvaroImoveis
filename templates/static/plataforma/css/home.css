@@ -83,16 +83,12 @@
 }
 
 .a_none{
-
     color: white;
-
 }
 
 .a_none:hover{
-
     text-decoration: none;
     color: white;
-
 }
 
 .titulo_especificacao{
@@ -100,48 +96,37 @@
     font-weight: bold;
     margin-top: 20px;
     font-size: 40px;
-
-
 }
 
 .especificacao{
     font-size: 30px;
     font-weight: bold;
-
-
 }
 
 .especificacao_endereco{
     font-size: 25px;
-
 }
 
 .btn_agendar_visita{
-
     border: none;
     background-color: #1F4073;
     color: white;
     font-weight: bold;
     font-size: 20px;
     padding: 5px 10px 5px 10px;
-
 }
 
 .div_possivel_interesse{
-
     text-align: left;
-
 }
 
 .btn_agendar{
-
     border: none;
     background-color: #1F4073;
     color: white;
     font-weight: bold;
     font-size: 20px;
     padding: 5px 10px 5px 10px;
-
 }
 
 .btn_agendar:hover{
@@ -154,12 +139,12 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .lista-detalhes li{
-    margin-right: 10px;
+    margin-right: 10px;   
 }
+
 .logo-sobre{
     height: 160px;
     width: 321px;
