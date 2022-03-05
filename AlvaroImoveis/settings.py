@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-from threading import local
 import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

@@ -2,94 +2,87 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'plataforma/css/home.css' %}">
+<link rel="stylesheet" href="{% static '/plataforma/css/home.css' %}">
 {% endblock  %}
 {% block 'title' %}Página Inicial{% endblock %}
 {% block 'body' %}
 
-<div class="container mt-2 ">
-<form action="{% url 'home' %}" method="get">
-  <div class="form-row">
-    <div class="col-md-2 mt-1">
-      <select name="tipoAV" class="custom-select mr-sm-2"  >
-        <option value="V">Comprar</option>
-        <option value="A">Alugar</option>
-      </select>
+<div class="masthead container-fluid">
+  <div class="d-flex flex-colum flex-wrap justify-content-center ">
+    <div class="container mt-5 d-flex justify-content-center align-items-center">
+      <form action="{% url 'AouV' %}" method="get" >
+        <button class="btn btn-primary" id="botaoAluguelOuCompra" value="A" name="tipoAV" type="submit"> Alugar </button>
+        <button class="btn btn-primary" id="botaoAluguelOuCompra" value="V" name="tipoAV" type="submit"> Comprar </button>
+      </form>
     </div>
-
-    <div class="col-md-2 mt-1">
-      <select name="tipo" class="custom-select mr-sm-2">
-        <option  id="" value="A">Apartamento</option>
-        <option  id="" value="C">Casa</option>
-        <option  id="" value="L">Lote</option>
-      </select>
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <select name="cidade" class="custom-select mr-sm-2">
-        {% for cidade in cidades %}
-          <option value="{{cidade.id}}">{{cidade.nome}}</option>
-        {% endfor %}
-      </select>
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
-    </div>
-
-    <div class="col-md-2 mt-1">
-      <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">  
-    </div>
-    <button class="btn btn-primary" type="submit"> Filtrar </button>
-  </div>
-</form>
-<div class="row">
-
-    {% for imovel in imoveis %}
-      
-        <div class="col-md cont">
-          <div class="card_imovel">
-            <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
-            <div class="informacoes_imoveis">
-              <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
-              {% if imovel.tipo == 'V' %}
-              <p>Venda</p>
-              {% endif %}
-              {% if imovel.tipo == 'A' %}
-              <p>Aluguel</p>
-              {% endif %}
-              {% if imovel.tipo == 'L' %}
-              <p>Lote</p>
-              {% endif %}
-              {{imovel.rua}}, {{imovel.cidade}}
-              <br>
-              <ul class="lista-detalhes">
-                <li>
-                  <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
-                </li>
-                <li>
-                  <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{imovel.banheiros}}
-                </li>
-                <li>
-                  <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{imovel.garagens}}
-                </li>
-                <li>
-                  <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{imovel.tamanho}} m²
-                </li>
-              </ul>
-              <!-- <p><img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}} <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="25px">{{imovel.banheiros}} <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="25px"> {{imovel.garagens}} <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="25px"> {{imovel.tamanho}} </p> -->
-              <!-- <img width="7%" src="{% static 'plataforma/img/heart.png' %}"> -->
-            </div>
-          
+    <div class="container mt-5 d-flex justify-content-center">
+      <form action="{% url 'home' %}" method="get">
+        <div class="form-row">
+          <div class="col-md-2 mt-1">
+            <select name="tipo" class="custom-select mr-sm-2">
+              <option  id="" value="A">Apartamento</option>
+              <option  id="" value="C">Casa</option>
+              <option  id="" value="L">Lote</option>
+            </select>
           </div>
-
+          <div class="col-md-2 mt-1">
+            <select name="cidade" class="custom-select mr-sm-2">
+              {% for cidade in cidades %}
+                <option value="{{cidade.id}}">{{cidade.nome}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-2 mt-1">
+            <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
+          </div>
+          <div class="col-md-2 mt-1">
+            <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">
+          </div>
+          <button class="btn btn-primary" type="submit"> Filtrar </button>
         </div>
-      
-    {% endfor %}
-
+      </form>
+    </div>
   </div>
+</div>
 
-
+<div class="container mt-2 ">  
+  <div class="row">
+      {% for imovel in imoveis %}
+          <div class="col-md cont">
+            <div class="card_imovel">
+              <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
+              <div class="informacoes_imoveis">
+                <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
+                {% if imovel.tipo == 'V' %}
+                <p>Venda</p>
+                {% endif %}
+                {% if imovel.tipo == 'A' %}
+                <p>Aluguel</p>
+                {% endif %}
+                {% if imovel.tipo == 'L' %}
+                <p>Lote</p>
+                {% endif %}
+                {{imovel.rua}}, {{imovel.cidade}}
+                <br>
+                <ul class="lista-detalhes" style="list-style: none;">
+                  <li>
+                    <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
+                  </li>
+                  <li>
+                    <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{imovel.banheiros}}
+                  </li>
+                  <li>
+                    <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{imovel.garagens}}
+                  </li>
+                  <li>
+                    <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{imovel.tamanho}} m²
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
 </div>
 
 

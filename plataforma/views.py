@@ -49,3 +49,9 @@ def imovel(request, id):
     sugestoes = Imovei.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
     return render(request, 'imovel.html', {'imovel': imovel, 'sugestoes': sugestoes, 'id': id})
 
+def  aluguelOuVenda(request):
+    tipoAV = request.GET.get('tipoAV')
+    cidades = Cidade.objects.all()
+    imoveis = Imovei.objects.filter(tipo__in=tipoAV)
+    return render(request, 'home.html', {'imoveis': imoveis, 'cidades': cidades})
+

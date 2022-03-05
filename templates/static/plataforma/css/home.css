@@ -1,7 +1,3 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-</style>
-
 * {
     padding:0;
     margin:0;
@@ -158,4 +154,19 @@
     font-weight: 400;
     font-size: 20px;   
 }
+
+.masthead{
+    background-image: url('/static/img/Fundo.png');
+    background-size: cover;
+    min-height: 60vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position:relative;
+}
+
+#botaoAluguelOuCompra{
+    height: 50px;
+    width: 100px;
+}
+
 
