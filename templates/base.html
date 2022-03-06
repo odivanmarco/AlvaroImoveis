@@ -51,49 +51,109 @@
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" ></script>
 
-      <footer class="container-fluid mt-5" style="background-color:#1F4073 ;" >
-        <div class="row pt-5 pb-5">
+  <footer
+          class="text-center text-lg-start text-white mt-5"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #1F4073"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Conecte-se conosco nas redes sociais:</span>
+      </div>
+      <!-- Left -->
 
-          <section class="col-md-5">
-            <h5 >Contato</h5>
-                  <ul class="nav flex-column">
-                    <li class=nav-item>
-                     <a href="tel:+5527111111111" class="nav-link"> Tel: (27) 9 9999-9999</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="https://api.whatsapp.com/send?phone=55&text=" class="nav-link" target="blank">Whatsapp (27) 9 9999-9999</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">Email: xxxxxxxxxxxx@gmail.com</a>
-                    </li>
-                  </ul>
-          </section>
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4 mr-3">
+          <img src="{% static '/img/facebook.png' %}" width="40px" alt="">
+        </a>
+        <a href="" class="text-white me-4 mr-3">
+          <img src="{% static '/img/instagram.png' %}" width="40px" alt="">
+        </a>
+        <a href="" class="text-white me-4 mr-3">
+          <img src="{% static '/img/whatsapp.png' %}" width="40px" alt="">
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
 
-          <section class="col-md-5">
-            <h5>Informações</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a href="#" class="nav-link">Baby</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Baby2</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Baby3</a>
-              </li>
-            </ul>
-          </section>
-          
-          <section >
-            <ul class="nav flex-column"> 
-              <li class="nav-item">
-                <a href="#" class="nav-link" id="VoltarAoTopo">Voltar ao topo </a>
-              </li>
-            </ul> 
-            
-          </section>
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Alvaro imoveis</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #1F4073; height: 2px"
+                />
+            <p>
+             Encontre um lar do seu jeito com a gente
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Links rápidos</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #1F4073; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Sobre nós</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Financiamento</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Fale Conosco</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contatos</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #1F4073; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
         </div>
-      </footer>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 
       <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
 </body>

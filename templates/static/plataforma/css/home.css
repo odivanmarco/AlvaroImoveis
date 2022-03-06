@@ -155,18 +155,26 @@
     font-size: 20px;   
 }
 
-.masthead{
+/* .masthead{
     background-image: url('/static/img/Fundo.png');
     background-size: cover;
-    min-height: 60vh;
     background-repeat: no-repeat;
     background-position: center center;
-    position:relative;
+} */
+
+#fundo-imagem{
+    position: relative;
+    background-image: url("/static/img/Aracruz_SEDE_large.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    padding: 0;
+    border: none;
+    margin: 0;
 }
 
-#botaoAluguelOuCompra{
-    height: 50px;
-    width: 100px;
-}
+
+
 
 

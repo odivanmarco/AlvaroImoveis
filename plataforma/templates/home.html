@@ -7,7 +7,7 @@
 {% block 'title' %}Página Inicial{% endblock %}
 {% block 'body' %}
 
-<div class="masthead container-fluid">
+<!-- <div class="masthead container-fluid">
   <div class="d-flex flex-colum flex-wrap justify-content-center ">
     <div class="container mt-5 d-flex justify-content-center align-items-center">
       <form action="{% url 'AouV' %}" method="get" >
@@ -15,36 +15,47 @@
         <button class="btn btn-primary" id="botaoAluguelOuCompra" value="V" name="tipoAV" type="submit"> Comprar </button>
       </form>
     </div>
-    <div class="container mt-5 d-flex justify-content-center">
-      <form action="{% url 'home' %}" method="get">
-        <div class="form-row">
-          <div class="col-md-2 mt-1">
-            <select name="tipo" class="custom-select mr-sm-2">
-              <option  id="" value="A">Apartamento</option>
-              <option  id="" value="C">Casa</option>
-              <option  id="" value="L">Lote</option>
-            </select>
-          </div>
-          <div class="col-md-2 mt-1">
-            <select name="cidade" class="custom-select mr-sm-2">
-              {% for cidade in cidades %}
-                <option value="{{cidade.id}}">{{cidade.nome}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          <div class="col-md-2 mt-1">
-            <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
-          </div>
-          <div class="col-md-2 mt-1">
-            <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">
-          </div>
-          <button class="btn btn-primary" type="submit"> Filtrar </button>
-        </div>
+  </div>
+</div> -->
+
+<!-- <div class="container mt-5 d-flex justify-content-center">
+  <form action="{% url 'home' %}" method="get">
+    <div class="form-row">
+      <div class="col-md-2 mt-1">
+        <select name="tipo" class="custom-select mr-sm-2">
+          <option  id="" value="A">Apartamento</option>
+          <option  id="" value="C">Casa</option>
+          <option  id="" value="L">Lote</option>
+        </select>
+      </div>
+      <div class="col-md-2 mt-1">
+        <select name="cidade" class="custom-select mr-sm-2">
+          {% for cidade in cidades %}
+            <option value="{{cidade.id}}">{{cidade.nome}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2 mt-1">
+        <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
+      </div>
+      <div class="col-md-2 mt-1">
+        <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">
+      </div>
+      <button class="btn btn-primary" type="submit"> Filtrar </button>
+    </div>
+  </form>
+</div> -->
+
+
+  <div class="container-fluid d-flex justify-content-center align-items-center" id="fundo-imagem">
+    <div class="col-8 d-flex justify-content-center">
+      <form action="{% url 'AouV' %}" method="get" >
+        <button class="btn btn-primary btn-lg" id="botaoAluguelOuCompra" value="A" name="tipoAV" type="submit"> Alugar </button>
+        <button class="btn btn-primary btn-lg" id="botaoAluguelOuCompra" value="V" name="tipoAV" type="submit"> Comprar </button>
       </form>
     </div>
   </div>
-</div>
-
+  
 <div class="container mt-2 ">  
   <div class="row">
       {% for imovel in imoveis %}
