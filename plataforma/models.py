@@ -27,6 +27,7 @@ class Imovei(models.Model):
     tamanho = models.FloatField()
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
     rua = models.CharField(max_length=50)
+    bairro = models.CharField(max_length=60)
     tipo = models.CharField(max_length=1, choices=choices)
     tipo_imovel = models.CharField(max_length=1, choices=choices_imovel)
     numero = models.IntegerField()
