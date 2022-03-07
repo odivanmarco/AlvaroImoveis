@@ -167,11 +167,31 @@
     background-image: url("/static/img/Aracruz_SEDE_large.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     height: 70vh;
     padding: 0;
     border: none;
     margin: 0;
+}
+
+#formMensagem{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    background-color: #faf9f5;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#sobreTitulo{
+    color: #2e2e2e;
+}
+
+
+#card-sobre{
+    background-color: rgb(190, 190, 190);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 10px;
 }
 
 
