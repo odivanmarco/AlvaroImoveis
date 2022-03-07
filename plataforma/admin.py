@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Imovei,Cidade,Imagem
+from .models import Imovei,Cidade,Imagem,Contato
 # Register your models here.
 
 @admin.register(Imovei)
@@ -10,3 +10,4 @@ class ImoveiAdmin(admin.ModelAdmin):
 
 admin.site.register(Imagem)
 admin.site.register(Cidade)
+admin.site.register(Contato)

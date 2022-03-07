@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404
-from .models import Imovei,Cidade
+from .models import Imovei,Cidade,Contato
 
 # Create your views here.
 
@@ -10,7 +10,21 @@ def financiamento(request):
     return render(request, 'financiamento.html')
 
 def faleconosco(request):
-    return render(request, 'faleconosco.html')
+    if request.method=="GET":
+        return render(request, 'faleconosco.html')
+    else:
+        contact = Contato()
+        name = request.POST.get('name')
+        email = request.POST.get('emailC')
+        telefone = request.POST.get('telefone')
+        subject = request.POST.get('mensagem')
+        contact.name = name
+        contact.email = email
+        contact.telefone = telefone
+        contact.mensagem = subject
+        contact.save()
+        return render(request,'faleconosco.html')
+
 
 def home(request):
     preco_minimo = request.GET.get('preco_minimo')

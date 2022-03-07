@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms import IntegerField
+from django.forms import CharField, EmailField, IntegerField
 
 class Imagem(models.Model):
     img = models.ImageField(upload_to='img')
@@ -37,3 +37,11 @@ class Imovei(models.Model):
 
     def __str__(self) -> str:
         return self.rua
+        
+class Contato(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=254)
+    telefone = models.CharField(max_length=20)
+    mensagem = models.TextField()
+    def __str__(self) :
+        return self.name
