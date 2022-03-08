@@ -66,39 +66,41 @@
   </button>
   <div class="row">
       {% for imovel in imoveis %}
-          <div class="col-md cont">
-            <div class="card_imovel">
-              <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
-              <div class="informacoes_imoveis">
-                <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
-                {% if imovel.tipo == 'V' %}
-                <p>Venda</p>
-                {% endif %}
-                {% if imovel.tipo == 'A' %}
-                <p>Aluguel</p>
-                {% endif %}
-                {% if imovel.tipo == 'L' %}
-                <p>Lote</p>
-                {% endif %}
-                {{imovel.rua}}, {{imovel.bairro}} ,{{imovel.cidade}}
-                <br>
-                <ul class="lista-detalhes" style="list-style: none;">
-                  <li>
-                    <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
-                  </li>
-                  <li>
-                    <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{imovel.banheiros}}
-                  </li>
-                  <li>
-                    <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{imovel.garagens}}
-                  </li>
-                  <li>
-                    <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{imovel.tamanho}} m²
-                  </li>
-                </ul>
+          <a href="{% url 'imovel' imovel.id %}" class="a_none">
+            <div class="col-md cont">
+              <div class="card_imovel">
+                <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
+                <div class="informacoes_imoveis">
+                  <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
+                  {% if imovel.tipo == 'V' %}
+                  <p>Venda</p>
+                  {% endif %}
+                  {% if imovel.tipo == 'A' %}
+                  <p>Aluguel</p>
+                  {% endif %}
+                  {% if imovel.tipo == 'L' %}
+                  <p>Lote</p>
+                  {% endif %}
+                  {{imovel.rua}}, {{imovel.bairro}} ,{{imovel.cidade}}
+                  <br>
+                  <ul class="lista-detalhes" style="list-style: none;">
+                    <li>
+                      <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
+                    </li>
+                    <li>
+                      <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{imovel.banheiros}}
+                    </li>
+                    <li>
+                      <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{imovel.garagens}}
+                    </li>
+                    <li>
+                      <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{imovel.tamanho}} m²
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
       {% endfor %}
     </div>
 </div>
