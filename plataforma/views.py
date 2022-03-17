@@ -61,7 +61,7 @@ def buscaPorCodigo(request):
 def imovel(request, id):
     imovel = get_object_or_404(Imovei, id=id)
     sugestoes = Imovei.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
-    return render(request, 'imovel.html', {'imovel': imovel, 'sugestoes': sugestoes, 'id': id})
+    return render(request, 'imovel.html', {'imoveis': imovel, 'sugestoes': sugestoes, 'id': id})
 
 def  aluguelOuVenda(request):
     tipoAV = request.GET.get('tipoAV')
