@@ -82,39 +82,41 @@
             
             <div class="row">
                 {% for sugestao in sugestoes %}
-                    <div class="col-md cont">
-                        <div class="card_imovel">
-                            <img class="img_capa_imovel" src="{{sugestao.imagens.all.0.img.url}}">
-                            <div class="informacoes_imoveis">
-                            <a class="a_none" href="{% url 'imovel' sugestao.id %}"><h4 class="valor">R$ {{sugestao.valor}}</h4></a>
-                            {% if sugestao.tipo == 'V' %}
-                            <p>Venda</p>
-                            {% endif %}
-                            {% if sugestao.tipo == 'A' %}
-                            <p>Aluguel</p>
-                            {% endif %}
-                            {% if sugestao.tipo == 'L' %}
-                            <p>Lote</p>
-                            {% endif %}
-                            <p>{{sugestao.rua}}, {{sugestao.bairro}} ,{{sugestao.cidade}}</p>
-                            <ul class="lista-detalhes" style="list-style: none;">
-                              <li>
-                                <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{sugestao.quartos}}
-                              </li>
-                              <li>
-                                <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{sugestao.banheiros}}
-                              </li>
-                              <li>
-                                <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{sugestao.garagens}}
-                              </li>
-                              <li>
-                                <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{sugestao.tamanho}} m²
-                              </li>
-                            </ul>
+                    <a href="{% url 'imovel' sugestao.id %}" class="a_none">
+                        <div class="col-md cont">
+                            <div class="card_imovel">
+                                <img class="img_capa_imovel" src="{{sugestao.imagens.all.0.img.url}}">
+                                <div class="informacoes_imoveis">
+                                <a class="a_none" href="{% url 'imovel' sugestao.id %}"><h4 class="valor">R$ {{sugestao.valor}}</h4></a>
+                                {% if sugestao.tipo == 'V' %}
+                                <p>Venda</p>
+                                {% endif %}
+                                {% if sugestao.tipo == 'A' %}
+                                <p>Aluguel</p>
+                                {% endif %}
+                                {% if sugestao.tipo == 'L' %}
+                                <p>Lote</p>
+                                {% endif %}
+                                {{imovel.rua}}, {{imovel.bairro}}
+                                <p>{{imovel.cidade}}</p>
+                                <ul class="lista-detalhes" style="list-style: none;">
+                                  <li>
+                                    <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{sugestao.quartos}}
+                                  </li>
+                                  <li>
+                                    <img src="{% static '/img/banheira.png' %}" alt="banheiros" width="20px">{{sugestao.banheiros}}
+                                  </li>
+                                  <li>
+                                    <img src="{% static '/img/garagem-privada.png' %}" alt="garagens " width="20px"> {{sugestao.garagens}}
+                                  </li>
+                                  <li>
+                                    <img src="{% static '/img/area.png' %}" alt="metros quadrados" width="22px"> {{sugestao.tamanho}} m²
+                                  </li>
+                                </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </a>
                 {% endfor %}
             </div>
             

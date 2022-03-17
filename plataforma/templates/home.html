@@ -67,7 +67,7 @@
   <div class="row">
       {% for imovel in imoveis %}
           <a href="{% url 'imovel' imovel.id %}" class="a_none">
-            <div class="col-md cont">
+            <div class="col-md-4">
               <div class="card_imovel">
                 <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
                 <div class="informacoes_imoveis">
@@ -81,8 +81,8 @@
                   {% if imovel.tipo == 'L' %}
                   <p>Lote</p>
                   {% endif %}
-                  {{imovel.rua}}, {{imovel.bairro}} ,{{imovel.cidade}}
-                  <br>
+                  {{imovel.rua}}, {{imovel.bairro}}
+                  <p>{{imovel.cidade}}</p>
                   <ul class="lista-detalhes" style="list-style: none;">
                     <li>
                       <img src="{% static '/img/cama.png'%}" alt="dormitórios" width="25px"> {{imovel.quartos}}
