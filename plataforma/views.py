@@ -23,7 +23,8 @@ def faleconosco(request):
         contact.telefone = telefone
         contact.mensagem = subject
         contact.save()
-        return render(request,'faleconosco.html')
+        mensagem = "Mensagem enviada com sucesso"
+        return render(request,'faleconosco.html',{'mensagem': mensagem})
 
 
 def home(request):
