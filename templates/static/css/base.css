@@ -21,9 +21,11 @@
     text-decoration: underline;
 }
 
-
-@media (max-width: 397px){
+.whatsapp{
+    text-decoration: underline;
+}
+/* @media (max-width: 397px){
     #pesquisa{
         width: 100%;
     }
-}
+} */
