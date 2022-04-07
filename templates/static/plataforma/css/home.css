@@ -141,6 +141,10 @@
     margin-right: 10px;   
 }
 
+#codigoImovel{
+    color: red;
+}
+
 .logo-sobre{
     height: 160px;
     width: 321px;
