@@ -16,10 +16,10 @@ class Cidade(models.Model):
 
 class Imovei(models.Model):
     choices = (('V', 'Venda'),
-               ('A', 'Aluguel'))
+               ('A', 'Aluguel'),('T','Temporada'))
 
     choices_imovel = (('A', 'Apartamento'),
-                      ('C', 'Casa'),('L','Lote'))
+                      ('C', 'Casa'),('L','Lote'),('IC','Imóvel_Comercial'),('IR','Imóvel_Rural'))
                         
     imagens = models.ManyToManyField(Imagem)
     valor = models.FloatField()
@@ -29,7 +29,7 @@ class Imovei(models.Model):
     rua = models.CharField(max_length=50)
     bairro = models.CharField(max_length=60)
     tipo = models.CharField(max_length=1, choices=choices)
-    tipo_imovel = models.CharField(max_length=1, choices=choices_imovel)
+    tipo_imovel = models.CharField(max_length=2, choices=choices_imovel)
     numero = models.IntegerField()
     descricao = models.TextField()
     garagens = models.IntegerField()
