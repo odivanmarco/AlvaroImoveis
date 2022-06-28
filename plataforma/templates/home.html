@@ -7,49 +7,9 @@
 {% block 'title' %}Página Inicial{% endblock %}
 {% block 'body' %}
 
-<!-- <div class="masthead container-fluid">
-  <div class="d-flex flex-colum flex-wrap justify-content-center ">
-    <div class="container mt-5 d-flex justify-content-center align-items-center">
-      <form action="{% url 'AouV' %}" method="get" >
-        <button class="btn btn-primary" id="botaoAluguelOuCompra" value="A" name="tipoAV" type="submit"> Alugar </button>
-        <button class="btn btn-primary" id="botaoAluguelOuCompra" value="V" name="tipoAV" type="submit"> Comprar </button>
-      </form>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class="container mt-5 d-flex justify-content-center">
-  <form action="{% url 'home' %}" method="get">
-    <div class="form-row">
-      <div class="col-md-2 mt-1">
-        <select name="tipo" class="custom-select mr-sm-2">
-          <option  id="" value="A">Apartamento</option>
-          <option  id="" value="C">Casa</option>
-          <option  id="" value="L">Lote</option>
-        </select>
-      </div>
-      <div class="col-md-2 mt-1">
-        <select name="cidade" class="custom-select mr-sm-2">
-          {% for cidade in cidades %}
-            <option value="{{cidade.id}}">{{cidade.nome}}</option>
-          {% endfor %}
-        </select>
-      </div>
-      <div class="col-md-2 mt-1">
-        <input name="preco_minimo" class="form-control" type="number" placeholder="preço minimo">
-      </div>
-      <div class="col-md-2 mt-1">
-        <input name="preco_maximo" class="form-control" type="number" placeholder="preço maximo">
-      </div>
-      <button class="btn btn-primary" type="submit"> Filtrar </button>
-    </div>
-  </form>
-</div> -->
-
-
-  <div class="container-fluid d-flex justify-content-center align-items-center" id="fundo-imagem">
+  <div class="container-fluid d-flex justify-content-center align-items-end" id="fundo-imagem">
     <div class="col-8 d-flex justify-content-center">
-      <form action="{% url 'AouV' %}" method="get" >
+      <form class="mb-5" action="{% url 'AouV' %}" method="get" >
         <button class="btn btn-primary btn-lg" id="botaoAluguelOuCompra" value="A" name="tipoAV" type="submit"> Alugar </button>
         <button class="btn btn-primary btn-lg" id="botaoAluguelOuCompra" value="V" name="tipoAV" type="submit"> Comprar </button>
       </form>
@@ -58,18 +18,19 @@
 
 
   
-<div class="container mt-2 ">  
+<div class="container">  
   <br>
   <button type="button" class="btn_filtrar" data-toggle="modal"
 	 data-target="#exampleModal">
     FILTRAR
   </button>
-  <div class="row">
+  <div class="container-fluid" id="container-imoveis">
       {% for imovel in imoveis %}
-          <a href="{% url 'imovel' imovel.id %}" class="a_none">
-            <div class="col-md-4">
+            <div class="" id="imovel">
               <div class="card_imovel">
+                <a href="{% url 'imovel' imovel.id %}" class="a_none">
                 <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
+                </a>
                 <div class="informacoes_imoveis">
                   <a class="a_none" href="{% url 'imovel' imovel.id %}"><h4 class="valor">R$ {{imovel.valor}}</h4></a>
                   {% if imovel.tipo == 'V' %}
@@ -101,7 +62,6 @@
                 </div>
               </div>
             </div>
-          </a>
       {% endfor %}
     </div>
 </div>
@@ -121,9 +81,7 @@
           <label>Preço mínimo</label>
           <br>
           <input name="preco_minimo" class="form-control" type="number" placeholder="preço mínimo">
-
           <br>
-
           <label>Preço máximo</label>
           <br>
           <input name="preco_maximo" class="form-control" type="number" placeholder="preço máximo">
